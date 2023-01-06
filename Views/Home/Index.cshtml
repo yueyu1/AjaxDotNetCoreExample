@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Person>
+
+<div class="col-6">
+  <h5>Example of using AJAX to post various data types in .NET Core</h5>
+  <div class="text-danger my-4" id="msg"></div>
+  <div class="form-group">
+    <label for="inputName">Name</label>
+    <input class="form-control" id="inputName" placeholder="Enter name">
+  </div>
+  <div class="form-group mt-2">
+    <label for="inputAge">Age</label>
+    <input class="form-control" id="inputAge" placeholder="Enter age">
+  </div>
+  <button class="btn btn-outline-primary mt-4" id="btnPostSimpleDataType">
+      Post Simple Data Types
+  </button>
+  <button class="btn btn-outline-primary mt-4" id="btnPostObject">
+      Post an Object
+  </button>
+  <hr class="my-4" />
+  <ul class="list-group">
+      @foreach(var p in Model)
+      {
+          <li class="list-group-item" value=@p.Id>
+              <div>@p.Name @p.Age</div>
+          </li>
+      }
+  </ul>
+  <button class="btn btn-outline-primary mt-4" id="btnPostCollection">
+      Post a Collection
+  </button>
+</div>
